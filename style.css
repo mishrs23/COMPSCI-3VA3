@@ -1,0 +1,353 @@
+/*
+  Colors: #fcfafa (bg) · #c8d3d5 (accent) · #0B161E (text/dark)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0B161E;
+  background: #fcfafa;
+}
+
+/* ── Header ──────────────────────────────── */
+header {
+  background: #f5f5f5; /* #c8d3d5;*/
+  color: #0B161E;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(11, 22, 30, 0.12);
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  margin-right: 2.5rem;
+  width: 100px;
+  height:100px;
+  border: none;/* dashed #c8d3d5;*/
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.course-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(11, 22, 30, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+  color: #0B161E;
+}
+
+.term {
+  font-size: 0.95rem;
+  color: rgba(11, 22, 30, 0.55);
+}
+
+.instructor {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  color: #0B161E;
+  font-weight: 600;
+}
+
+/* ── Nav ─────────────────────────────────── */
+nav {
+  background: #fcfafa;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #c8d3d5;
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+nav a {
+  color: #0B161E;
+  text-decoration: none;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background: #0B161E;
+  color: #fcfafa;
+}
+
+/* ── Main ────────────────────────────────── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0B161E;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+section p {
+  color: rgba(11, 22, 30, 0.75);
+  margin-bottom: 0.8rem;
+}
+
+/* ── Overview images ─────────────────────── */
+.overview-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.overview-image-placeholder {
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  border: 1px dashed #c8d3d5;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.overview-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overview-image figcaption {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+.overview-image figcaption a {
+  font-size: 0.78rem;
+  color: rgba(11, 22, 30, 0.5);
+  text-decoration: none;
+}
+
+.overview-image figcaption a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .overview-images { grid-template-columns: 1fr; }
+}
+
+/* ── Table — borderless, left-accent hover ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+thead {
+  background: transparent;
+  border-bottom: 2px solid #c8d3d5;
+}
+
+th {
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(11, 22, 30, 0.5);
+}
+
+td {
+  padding: 0.75rem 1rem;
+  font-size: 0.93rem;
+  color: #0B161E;
+  border-bottom: 1px solid rgba(200, 211, 213, 0.5);
+  border-left: 3px solid transparent;
+  background: #ffffff;
+  transition: border-left-color 0.15s;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr:hover td {
+  border-left-color: #0B161E;
+  background: rgba(200, 211, 213, 0.2);
+}
+
+/* ── Topic list ──────────────────────────── */
+.topic-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.5rem;
+}
+
+.topic-list li {
+  background: #ffffff;
+  border: 1px solid #c8d3d5;
+  border-radius: 6px;
+  padding: 0.65rem 1rem 0.65rem 2rem;
+  font-size: 0.94rem;
+  color: #0B161E;
+  position: relative;
+}
+
+.topic-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0.75rem;
+  color: rgba(11, 22, 30, 0.4);
+  font-size: 0.82rem;
+}
+
+/* ── Assessment list ─────────────────────── */
+.assessment-list {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #c8d3d5;
+  margin-bottom: 0.75rem;
+}
+
+.a-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(200, 211, 213, 0.4);
+  gap: 1rem;
+}
+
+.a-row:last-child { border-bottom: none; }
+
+.a-row--project {
+  background: rgba(200, 211, 213, 0.15);
+}
+
+.a-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.a-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0B161E;
+}
+
+.a-detail {
+  font-size: 0.83rem;
+  color: rgba(11, 22, 30, 0.5);
+}
+
+.a-weight {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0B161E;
+  white-space: nowrap;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: rgba(11, 22, 30, 0.5);
+  font-style: italic;
+}
+
+/* ── Contact ─────────────────────────────── */
+#contact a {
+  color: #0B161E;
+  font-weight: 600;
+  text-decoration: none;
+}
+#contact a:hover { text-decoration: underline; }
+
+/* ── Bottom bar ──────────────────────────── */
+.bottom-bar {
+  background: #0B161E;
+  color: rgba(200, 211, 213, 0.75);
+  padding: 0.75rem 2rem;
+  border-top: 1px solid rgba(200, 211, 213, 0.2);
+}
+
+.bottom-bar-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+}
+
+.bottom-bar strong {
+  color: #c8d3d5;
+  font-weight: 600;
+}
+
+/* ── Footer ──────────────────────────────── */
+footer {
+  background: #0B161E;
+  color: rgba(200, 211, 213, 0.35);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(200, 211, 213, 0.1);
+}
+
+@media (max-width: 640px) {
+  header h1 { font-size: 1.7rem; }
+  .header-inner { flex-direction: column; }
+  nav { flex-wrap: wrap; justify-content: flex-start; }
+  nav a { padding: 0.65rem 1rem; font-size: 0.85rem; }
+}
