@@ -219,6 +219,12 @@ td {
 
 tr:last-child td { border-bottom: none; }
 
+th:nth-child(1), td:nth-child(1) { width: 6%; }
+th:nth-child(2), td:nth-child(2) { width: 30%; }
+th:nth-child(3), td:nth-child(3) { width: 30%; }
+th:nth-child(4), td:nth-child(4) { width: 18%; }
+th:nth-child(5), td:nth-child(5) { width: 22%; }
+
 tbody tr:hover td {
   border-left-color: #0B161E;
   background: rgba(200, 211, 213, 0.2);
